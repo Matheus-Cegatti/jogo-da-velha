@@ -29,6 +29,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .celula-jogo:nth-child(1),
@@ -52,6 +53,25 @@ body{
 .celula-jogo:nth-child(6),
 .celula-jogo:nth-child(9) {
     border-right: none;
+}
+
+
+/* fazendo o X */
+.celula-jogo.x::before,
+.celula-jogo.x::after {
+    content:"";
+    height: calc(100px *0.10);
+    width: calc(100px * 0.9);
+    background: #A66CFF;
+    position: absolute;
+}
+
+.celula-jogo.x::before{
+    transform: rotate(45deg);
+}
+
+.celula-jogo.x::after{
+    transform: rotate(-45deg);
 }
 
 .mensagem-final{
