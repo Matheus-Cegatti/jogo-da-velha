@@ -61,7 +61,7 @@ body{
 .celula-jogo.x::after {
     content:"";
     height: calc(100px *0.10);
-    width: calc(100px * 0.9);
+    width: calc(100px * 0.7);
     background: #A66CFF;
     position: absolute;
 }
@@ -72,6 +72,17 @@ body{
 
 .celula-jogo.x::after{
     transform: rotate(-45deg);
+}
+
+/* fazendo o circulo */
+.celula-jogo.circulo::before,
+.celula-jogo.circulo::after {
+    content:"";
+    height: calc(100px *0.7);
+    width: calc(100px * 0.7);
+    background: #A66CFF;
+    border-radius: 50%;
+    position: absolute;
 }
 
 .mensagem-final{
