@@ -58,19 +58,29 @@ body{
 
 /* fazendo o X */
 .celula-jogo.x::before,
-.celula-jogo.x::after {
+.celula-jogo.x::after,
+.jogo.x .celula-jogo:not(.x):not(.circulo):hover::after,
+.jogo.x .celula-jogo:not(.x):not(.circulo):hover::before {
     content:"";
     height: calc(100px *0.10);
     width: calc(100px * 0.7);
     background: #A66CFF;
     position: absolute;
+    border-radius: 50%;
 }
 
-.celula-jogo.x::before{
+.jogo.x .celula-jogo:not(.x):not(.circulo):hover::after,
+.jogo.x .celula-jogo:not(.x):not(.circulo):hover::before{
+    opacity: 0.5;
+}
+
+.celula-jogo.x::before,
+.jogo.x .celula-jogo:hover::before{
     transform: rotate(45deg);
 }
 
-.celula-jogo.x::after{
+.celula-jogo.x::after,
+.jogo.x .celula-jogo:hover::after{
     transform: rotate(-45deg);
 }
 
@@ -85,6 +95,9 @@ body{
     position: absolute;
 }
 
+.celula-jogo.x,.celula-jogo.circulo {
+    cursor: no-drop;
+}
 .mensagem-final{
     display: none;
 }
