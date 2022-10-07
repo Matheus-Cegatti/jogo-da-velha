@@ -70,8 +70,10 @@ body{
 }
 
 .jogo.x .celula-jogo:not(.x):not(.circulo):hover::after,
-.jogo.x .celula-jogo:not(.x):not(.circulo):hover::before{
-    opacity: 0.5;
+.jogo.x .celula-jogo:not(.x):not(.circulo):hover::before,
+.jogo.circulo .celula-jogo:not(.x):not(.circulo):hover::after,
+.jogo.circulo .celula-jogo:not(.x):not(.circulo):hover::before{
+    opacity: 0.4;
 }
 
 .celula-jogo.x::before,
@@ -86,7 +88,9 @@ body{
 
 /* fazendo o circulo */
 .celula-jogo.circulo::before,
-.celula-jogo.circulo::after {
+.celula-jogo.circulo::after,
+.jogo.circulo .celula-jogo:not(.x):not(.circulo):hover::after,
+.jogo.circulo .celula-jogo:not(.x):not(.circulo):hover::before  {
     content:"";
     height: calc(100px *0.7);
     width: calc(100px * 0.7);
