@@ -103,5 +103,38 @@ body{
     cursor: no-drop;
 }
 .mensagem-final{
-    display: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center ;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    /* opacity: 0.7; */
+}
+
+.reset {
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: #D07000;
+    border-radius: 25px;
+    font-weight: 700;
+    border: 2.5px solid #F1A661;
+    cursor: pointer;
+    margin-top: 1rem;
+    color: #4C0033;
+}
+
+.reset:hover {
+    background-color: #FFB200;
+    color: #4C3A51;
+}
+
+.msg-vitoria{
+    color: #D07000;
+    font-size: 3.75rem;
+    font-weight: 700;
 }
