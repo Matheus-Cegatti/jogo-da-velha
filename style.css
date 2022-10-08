@@ -116,6 +116,10 @@ body{
     /* opacity: 0.7; */
 }
 
+.mensagem-aparece{
+    display: flex;
+}
+
 .reset {
     font-size: 2rem;
     padding: 1rem;
