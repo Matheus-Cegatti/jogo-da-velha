@@ -2,6 +2,7 @@ const quadradosJogo = document.querySelectorAll("[data-celula");
 const jogo = document.querySelector("[data-jogo]");
 const msgFinal = document.querySelector(".mensagem-final");
 const msgVitoria = document.querySelector(".msg-vitoria");
+const btnReset = document.querySelector(".reset")
 
 let vezCirculoJogar;
 
@@ -18,12 +19,17 @@ const combinacoesVitoria = [
 
 const iniciandoJogo = () => {
     for (const quadrado of quadradosJogo){
+        quadrado.classList.remove("x");
+        quadrado.classList.remove("circulo");
+        quadrado.removeEventListener("click", clickQuadrado)
         quadrado.addEventListener("click", clickQuadrado, {once: true})
     }
 
     vezCirculoJogar = false
 
-    jogo.classList.add("x")
+    definirFocoQuadrado()
+
+    msgFinal.classList.remove("mensagem-aparece");
 }
 
 const finalDeJogo = (empate) => {
@@ -49,9 +55,7 @@ const colocandoSimbolo = (celula, adicionarClasse) => {
     celula.classList.add(adicionarClasse)
 }
 
-const alternandoTurno = () => {
-    vezCirculoJogar = !vezCirculoJogar
-
+const definirFocoQuadrado = () => {
     jogo.classList.remove("circulo");
     jogo.classList.remove("x")
 
@@ -60,6 +64,12 @@ const alternandoTurno = () => {
     }else{
         jogo.classList.add("x")
     }
+}
+
+const alternandoTurno = () => {
+    vezCirculoJogar = !vezCirculoJogar
+
+    definirFocoQuadrado();
 }
 
 const clickQuadrado = (e) => {
@@ -80,4 +90,5 @@ const clickQuadrado = (e) => {
 
 iniciandoJogo();
 
+btnReset.addEventListener("click", iniciandoJogo)
 
